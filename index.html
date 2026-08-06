@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ANIMA GAME</title>
-<meta name="description" content="ANIMA GAME — il gioco di SYSTEMA 77. Presto qui.">
+<title>ANIMA GAME — si gioca su animagame.io</title>
+<meta name="description" content="ANIMA GAME vive su animagame.io.">
+<!-- Il gioco è VIVO da giorni su animagame.io. Questa pagina diceva «Presto qui»
+     e mandava via chi arrivava convinto che non esistesse ancora niente.
+     Un prodotto, un indirizzo vero; gli altri sono porte. — D.R.A.G.O., 2026-08-06 -->
+<link rel="canonical" href="https://animagame.io/">
+<meta http-equiv="refresh" content="0; url=https://animagame.io/">
 <style>
   :root{
-    --bg-deep:#0C0B0E; --bg-surface:#141216; --amber:#C9A15E;
+    --bg-deep:#0C0B0E; --amber:#C9A15E; --verde:#38E08A;
     --text-hi:#ECE7DF; --text-lo:#A7A29B; --line:#3A3730;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -29,12 +34,13 @@
   h1 b{color:var(--amber); font-weight:400}
   .riga{width:3.5rem; height:1px; background:var(--line); margin:1.5rem auto}
   p{color:var(--text-lo); line-height:1.7; font-size:1.02rem}
-  .presto{
-    display:inline-block; margin-top:2rem; padding:.55rem 1.2rem;
-    border:1px solid var(--line); border-radius:2px;
+  .porta{
+    display:inline-block; margin-top:2rem; padding:.7rem 1.5rem;
+    border:1px solid var(--verde); border-radius:2px;
     font-family:"Courier Prime","Courier New",monospace;
-    font-size:.78rem; letter-spacing:.28em; text-transform:uppercase; color:var(--amber);
+    font-size:.85rem; letter-spacing:.2em; color:var(--verde); text-decoration:none;
   }
+  .porta:hover{background:rgba(56,224,138,.08)}
   footer{
     position:fixed; left:0; right:0; bottom:1.2rem;
     font-family:"Courier Prime","Courier New",monospace;
@@ -48,14 +54,14 @@
 <body>
 <main>
   <div class="marca">&#9673; Anima Game</div>
-  <h1>L'anima è il nome <b>del prodotto</b>.</h1>
+  <h1>Il gioco è <b>già qui</b>.</h1>
   <div class="riga"></div>
-  <p>Il gioco di SYSTEMA 77. Presto qui.</p>
-  <div class="presto">Presto</div>
+  <p>Si entra da <b>animagame.io</b>. Ti ci stiamo portando adesso.</p>
+  <a class="porta" href="https://animagame.io/">&gt; entra</a>
 </main>
 <footer>
-  <span>systema77.com — la casa</span><span class="sep">·</span><a href="https://cyberboomer.io">cyberboomer.io — la voce</a>
+  <a href="https://systema77.com">systema77.com — la casa</a><span class="sep">·</span><a href="https://cyberboomer.io">cyberboomer.io — la voce</a>
 </footer>
-<!-- creato da D.R.A.G.O., 2026-07-28 -->
+<script>location.replace("https://animagame.io/");</script>
 </body>
 </html>
