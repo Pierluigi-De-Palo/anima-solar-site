@@ -3,79 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ANIMA APP — in sviluppo</title>
+<title>ANIMA</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="description" content="ANIMA APP è in sviluppo. Il gioco, ANIMA GAME, è già vivo su animagame.io.">
-<!-- 2026-08-19 — DECISIONE DEL DIRETTORE: questo dominio è una LANDING, non un ponte.
-     Prima era un ponte con redirect automatico verso animagame.io: il redirect è
-     TOLTO (meta refresh, canonical e location.replace), altrimenti la landing non si
-     vede nemmeno. Resta un link al gioco, perché chi arriva qui cercando ANIMA GAME
-     non deve finire in un vicolo cieco — era il rilievo di D.R.A.G.O. del 06/08.
-     ⛔ Volutamente NON contiene: date d'uscita, la regola dell'invito, i conti di
-     crescita. Sono un altro cantiere, e il Direttore ha detto di non aprirlo.
-     ⛔ Nessun nome di persona: cinque repo pubblici e zero nomi veri, e resta così.
-     — SQUELCH -->
+<meta name="description" content="ANIMA. Ogni cosa che abbiamo fatto, l'abbiamo fatta aspettando un'alba.">
+<meta property="og:title" content="ANIMA">
+<meta property="og:description" content="Ogni cosa che abbiamo fatto, l'abbiamo fatta aspettando un'alba.">
+<meta property="og:image" content="https://anima.solar/img/silence-lefkada-2013-2x1.jpg">
+<!-- 2026-10-05 · JUDY · Galassia V2.1 (JUDY-30 = 1, 05/10 06:36 UTC): «anima.solar: una pagina sola, bella, che rimanda al gioco». Nessuna promessa, nessuna data, nessun nome. Il panorama è del Direttore, scelto da lui (JUDY-43 = 2, 07/10 08:41 UTC): Lefkada, 20/08/2013, serie Silence, provino 99 di FLUX. La porta verso il gioco resta: chi cerca ANIMA GAME non deve finire in un vicolo cieco (rilievo del 06/08). -->
 <style>
-  :root{
-    --bg-deep:#0C0B0E; --amber:#C9A15E; --verde:#38E08A;
-    --text-hi:#ECE7DF; --text-lo:#A7A29B; --line:#3A3730;
-  }
+  :root{--bg:#0C0B0E;--amber:#C9A15E;--verde:#38E08A;--hi:#ECE7DF;--lo:#A7A29B;--line:#3A3730}
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    background:var(--bg-deep); color:var(--text-hi);
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    display:flex; align-items:center; justify-content:center;
-    text-align:center; padding:2rem;
-    background-image:radial-gradient(ellipse at 50% 38%, rgba(201,161,94,.07), transparent 62%);
-  }
-  main{max-width:36rem}
-  .marca{
-    font-family:"Courier Prime","Courier New",monospace;
-    letter-spacing:.35em; font-size:.85rem; color:var(--amber);
-    text-transform:uppercase; margin-bottom:1.4rem;
-  }
-  h1{font-size:clamp(1.7rem,5vw,2.5rem); font-weight:400; letter-spacing:.03em; line-height:1.35; margin-bottom:1rem}
-  h1 b{color:var(--amber); font-weight:400}
-  .riga{width:3.5rem; height:1px; background:var(--line); margin:1.5rem auto}
-  p{color:var(--text-lo); line-height:1.7; font-size:1.02rem}
-  p + p{margin-top:1rem}
-  .porta{
-    display:inline-block; margin-top:2rem; padding:.7rem 1.5rem;
-    border:1px solid var(--verde); border-radius:2px;
-    font-family:"Courier Prime","Courier New",monospace;
-    font-size:.85rem; letter-spacing:.2em; color:var(--verde); text-decoration:none;
-  }
-  .porta:hover{background:rgba(56,224,138,.08)}
-  footer{
-    position:fixed; left:0; right:0; bottom:1.2rem;
-    font-family:"Courier Prime","Courier New",monospace;
-    font-size:.72rem; letter-spacing:.1em; color:var(--text-lo); text-align:center;
-  }
-  footer a{color:var(--text-lo); text-decoration:none; border-bottom:1px solid var(--line)}
+  body{background:var(--bg);color:var(--hi);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;min-height:100vh;display:flex;flex-direction:column}
+  .cielo{width:100%;background:#000}
+  .cielo img{display:block;width:100%;height:auto}
+  .cielo .largo{aspect-ratio:3/1}
+  .cielo .stretto{display:none;aspect-ratio:2/1;object-fit:cover}
+  @media (max-width:700px){.cielo .largo{display:none}.cielo .stretto{display:block}}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.25rem 2rem;max-width:40rem;margin:0 auto}
+  .marca{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.4em;font-size:.95rem;color:var(--amber);text-transform:uppercase;margin-bottom:1.6rem}
+  h1{font-size:clamp(1.5rem,4.5vw,2.3rem);font-weight:400;letter-spacing:.02em;line-height:1.4;text-wrap:balance}
+  .riga{width:3.5rem;height:1px;background:var(--line);margin:1.8rem auto}
+  .porta{display:inline-block;padding:.7rem 1.5rem;border:1px solid var(--verde);border-radius:2px;font-family:"Courier Prime","Courier New",monospace;font-size:.85rem;letter-spacing:.2em;color:var(--verde);text-decoration:none}
+  .porta:hover,.porta:focus-visible{background:rgba(56,224,138,.08);outline:none}
+  .dove{margin-top:.8rem;font-family:"Courier Prime","Courier New",monospace;font-size:.72rem;letter-spacing:.1em;color:var(--lo)}
+  footer{padding:1.2rem;text-align:center;font-family:"Courier Prime","Courier New",monospace;font-size:.72rem;letter-spacing:.1em;color:var(--lo)}
+  footer a{color:var(--lo);text-decoration:none;border-bottom:1px solid var(--line)}
   footer a:hover{color:var(--amber)}
-  footer .sep{margin:0 .5rem; color:var(--line)}
-  /* Su telefono il footer smette di essere fisso, altrimenti copre il testo.
-     ⚠️ Ma `body` e' flex: togliendogli `position:fixed` il footer diventa una
-     COLONNA accanto a main e si accavalla al titolo. Visto nel browser, non
-     dedotto — serve anche `flex-direction:column`. */
-  @media (max-width:520px){
-    body{flex-direction:column; align-items:center; justify-content:flex-start; padding-top:3.5rem}
-    footer{position:static; margin-top:3rem}
-  }
+  footer .sep{margin:0 .5rem;color:var(--line)}
 </style>
 </head>
 <body>
+<figure class="cielo">
+  <img class="largo" src="img/silence-lefkada-2013.jpg" alt="Il sole che tramonta sul mare, fra un capo di roccia e un'isola lontana" width="2400" height="800">
+  <img class="stretto" src="img/silence-lefkada-2013-2x1.jpg" alt="Il sole che tramonta sul mare" width="1200" height="600">
+</figure>
 <main>
-  <div class="marca">&#9673; Anima App</div>
-  <h1>È <b>in sviluppo</b>.</h1>
-  <div class="riga"></div>
-  <p>Ci stiamo lavorando con calma. Quando ci sarà qualcosa da vedere, lo trovi qui.</p>
-  <p>Nel frattempo il gioco è già vivo: si chiama <b>ANIMA GAME</b> e si entra da animagame.io.</p>
-  <a class="porta" href="https://animagame.io/">&gt; vai al gioco</a>
+  <div class="marca">◉ Anima</div>
+  <h1>Ogni cosa che abbiamo fatto, l'abbiamo fatta aspettando un'alba.</h1>
+  <div class="riga" aria-hidden="true"></div>
+  <a class="porta" href="https://animagame.io">› il gioco</a>
+  <p class="dove">animagame.io · si entra con una carta</p>
 </main>
 <footer>
-  <a href="https://systema77.com">systema77.com — la casa</a><span class="sep">·</span><a href="https://cyberboomer.ninja">cyberboomer.ninja — la voce</a>
+  <a href="https://systema77.com">systema77.com</a><span class="sep">·</span><a href="https://cyberboomer.ninja">cyberboomer.ninja</a>
 </footer>
 </body>
 </html>
